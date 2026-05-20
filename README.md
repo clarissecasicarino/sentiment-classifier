@@ -47,11 +47,11 @@ The dataset is distributed under a **CC0 Public Domain license**. Even with a CC
 
 The dataset provides a set of structured fields describing each tweet. The most important features for this project include:
 
-- **1. Tweet text** (the main free‑text content), which is the primary input for classifying tweets as fear‑mongering, calm‑negative/concerned, or neutral/factual.
+**1. Tweet text** (the main free‑text content), which is the primary input for classifying tweets as fear‑mongering, calm‑negative/concerned, or neutral/factual.
 
-- **2. Timestamp / date of posting**, which can be used to study how discourse changes over time and to ensure that only information available at posting time is used.
+**2. Timestamp / date of posting**, which can be used to study how discourse changes over time and to ensure that only information available at posting time is used.
 
-- **3. Basic metadata** such as user location, language, and possibly engagement metrics (likes, retweets), which can be used for optional exploratory analysis or as auxiliary features (e.g., to see whether certain regions or time periods are more prone to fear‑mongering).
+**3. Basic metadata** such as user location, language, and possibly engagement metrics (likes, retweets), which can be used for optional exploratory analysis or as auxiliary features (e.g., to see whether certain regions or time periods are more prone to fear‑mongering).
 
 From the outset, there are several initial concerns:
 
