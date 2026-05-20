@@ -6,7 +6,7 @@
   - String identifier of the user account. Very high cardinality; used only for deduplication / reference, not as a model feature.
 
 - `user_location` — **categorical**
-  - Free‑text user location. High‑cardinality, noisy; mainly for exploratory analysis and potential bias checks.
+  - Free‑text user location. High‑cardinality, noisy; mainly for exploratory analysis.
 
 - `user_description` — **text**
   - Free‑form user profile description. Optional text feature; not needed for the initial baseline model.
