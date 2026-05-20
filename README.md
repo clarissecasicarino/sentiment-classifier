@@ -32,7 +32,36 @@ During outbreaks like COVID‑19 and future emerging viruses, social media becom
 
 - **Researchers and policymakers:** can study how fear and information spread in real time during outbreaks, informing guidelines for crisis communication and mental‑health support.
 
-## III. Project Organization
+## III. Rationale for Chosen Dataset and Target Variable
+
+This project uses a public dataset of COVID‑19–related tweets that contains tweet text plus basic metadata (such as user, timestamp, and location) collected during the early stages of the pandemic. This corpus is well suited to the problem because it captures real‑time public reactions to a major infectious disease, including a wide range of emotional and informational content, which makes it a good training ground for learning patterns of fear‑mongering, calm‑negative/concerned, and neutral/factual communication. The target variable in this project is a new 3‑class label that will be constructed on top of the tweet text, mapping each tweet into one of these tone categories rather than using standard sentiment labels like positive/negative/neutral.
+
+### Source, Access Method, and Licensing/Ethical Considerations:
+
+The dataset used in this project is the “COVID19 Tweets” collection hosted on Kaggle at:
+https://www.kaggle.com/datasets/gpreda/covid19-tweets
+
+The dataset is distributed under a **CC0 Public Domain license**. Even with a CC0 license, there are important ethical considerations. Tweets may still contain personal opinions, locations, or other attributes that could indirectly identify individuals, especially when combined with outside information. To mitigate this, the project focuses on aggregate modeling and analysis rather than individual users, avoids publishing handles or direct quotes tied to usernames, and paraphrases or anonymizes any example tweets included in reporting. The work also stays within a research/educational context and does not claim to provide an automated moderation tool ready for deployment.
+
+### Summary of Key Features and Initial Concerns:
+
+The dataset provides a set of structured fields describing each tweet. The most important features for this project include:
+
+- **1. Tweet text** (the main free‑text content), which is the primary input for classifying tweets as fear‑mongering, calm‑negative/concerned, or neutral/factual.
+
+- **2. Timestamp / date of posting**, which can be used to study how discourse changes over time and to ensure that only information available at posting time is used.
+
+- **3. Basic metadata** such as user location, language, and possibly engagement metrics (likes, retweets), which can be used for optional exploratory analysis or as auxiliary features (e.g., to see whether certain regions or time periods are more prone to fear‑mongering).
+
+From the outset, there are several initial concerns:
+
+**1. Class imbalance:** Because fear‑mongering is a specific, relatively extreme subtype of communication, there may be far fewer clearly fear‑mongering tweets than neutral or mildly negative ones, leading to skewed class distributions once the new 3‑class labels are created. This will need to be checked and potentially addressed with strategies like resampling, class‑weighted loss functions, or careful thresholding.
+
+**2. Sampling and representation bias:** The dataset only reflects users who were active on Twitter and using COVID‑related terms during the collection period, which means it over‑represents certain demographics, languages, and regions while under‑representing others. As a result, the model may learn patterns specific to particular communities and may not fully generalize to all populations or to communication about future viruses.
+
+**3. Temporal and topic drift:** The data comes from the COVID‑19 context, which had its own unique mix of fear, policy debates, and media narratives. When the model is later interpreted as a tool for future outbreaks (e.g., hantavirus‑related discourse), there is a risk that language patterns may shift, so any claims about generalization must be made cautiously and ideally validated on newer data.
+
+## IV. Project Organization
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
